@@ -1,11 +1,13 @@
 from pymongo import MongoClient
 
 class Database(object):
-    # these is the static properties or as the blueprint
+    # These is the static properties or as the blueprint
     uri = 'mongodb://127.0.0.1:27017'
     database = None
 
-    # we're not going to use self
+    # We're not going to use self
+    # You have to initialize first the collection that will be use on your Mongod
+    # As example, my collection here named as fullstack
     @staticmethod
     def initialize():
         client = MongoClient(Database.uri)
